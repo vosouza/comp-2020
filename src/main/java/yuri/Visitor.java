@@ -3,12 +3,12 @@ package yuri;
 import java.util.LinkedHashMap;
 import java.util.Stack;
 
-import main.antlr4.YuriBaseListener;
+import main.antlr4.YuriBaseVisitor;
 import main.antlr4.YuriParser;
 import yuri.model.Node;
 import yuri.model.SymbolTable;
 
-public class Listener extends YuriBaseListener {
+public class Visitor<T> extends YuriBaseVisitor<T> {
 	
 	LinkedHashMap<String, SymbolTable> st = new LinkedHashMap<>();
 	
@@ -19,16 +19,5 @@ public class Listener extends YuriBaseListener {
 	// Pilha com nos
     Stack<Node> nodeStack = new Stack<Node>();
 	
-	public Listener() {
-		
-	}
-	
-	@Override public void enterInclude(YuriParser.IncludeContext ctx) {
-		
-	}
-	
-	@Override public void enterProgramName(YuriParser.ProgramNameContext ctx) {
-		
-	}
 	
 }
